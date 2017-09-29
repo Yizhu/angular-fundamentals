@@ -1,4 +1,7 @@
+<router-outlet></router-outlet>
+
 <h1>{{title}}</h1>
+<img [src]="heroImageUrl" class="heroImg">
 <h2>My favorite hero is: {{myHero.name}}</h2>
 <p>Heroes:</p>
 <ul>
@@ -6,6 +9,12 @@
     {{ hero.name }}
     </li>
 </ul>
+
 <p *ngIf="heroes.length > 3">There are many heroes!</p>
 
-<router-outlet></router-outlet>
+<div [ngSwitch]="title">
+    <p *ngSwitchCase="'Tour of Heroes'">Title never change.</p>
+    <p *ngSwitchCase="'Empty!'">Title has changed.</p>
+</div>
+
+<app-edit [title]="edit" (changeTitle)="changeTitle($event)"></app-edit>

@@ -1,0 +1,19 @@
+.editBox { 
+    border: 1px solid #CACACA;
+    height: 100px;
+    width: 300px;
+    padding: 0 0 10px 10px;
+} 
+.content{
+    background: #CBE2FF;
+    height: 100px;
+    width: 200px;
+    margin: 30px 2px;
+}
+
+button{
+    background: #1976d1;
+    border: none;
+    padding: 3px 10px;
+    color: #fff;
+}

@@ -1,0 +1,8 @@
+<div class="editBox">
+  <h2>{{title}}</h2>
+  <input [(ngModel)]="heroInput">
+  <button (click)="clear()">Clear</button>
+  <div [ngClass]="{'content': heroInput}">
+    {{heroInput}}
+  </div>
+</div>
