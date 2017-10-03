@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit, OnChanges} from '@angular/core';
 
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
-export class EditComponent implements OnInit {
+export class EditComponent implements OnInit, OnChanges{
   @Input()  title;
   @Output() changeTitle = new EventEmitter<any>();
   heroInput: string = "";
@@ -13,6 +13,10 @@ export class EditComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(changes) {
+    console.log(changes);
   }
 
   clear(){

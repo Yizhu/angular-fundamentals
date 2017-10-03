@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<img [src]="heroImageUrl" class="heroImg">
+<h2>My favorite hero is: {{myHero.name}}</h2>
+<p>Heroes:</p>
+<ul>
+  <li *ngFor="let hero of heroes">
+    {{ hero.name }}
+    </li>
+</ul>
+
+<p *ngIf="heroes.length > 3">There are many heroes!</p>
+
+<div [ngSwitch]="title">
+    <p *ngSwitchCase="'Tour of Heroes'">Tour of Heroes.</p>
+    <p *ngSwitchCase="'Empty!'">Empty!</p>
+</div>
+<button (click)="changeEdit()">Change edit title</button>
+<app-edit [title]="edit" (changeTitle)="changeTitle($event)"></app-edit>
